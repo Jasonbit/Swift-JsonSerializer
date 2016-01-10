@@ -25,8 +25,5 @@
 import PackageDescription
 
 let package = Package(
-    name: "Swift-JsonSerializer",
-    dependencies: [
-        // .Package(url: "https://github.com/Zewo/Core.git", majorVersion: 0, minor: 1),
-    ]
+    name: "SwiftJsonSerializer"
 )
