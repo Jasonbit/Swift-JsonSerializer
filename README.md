@@ -1,6 +1,6 @@
-# Swift-JsonSerializer [![Build Status](https://travis-ci.org/gfx/Swift-JsonSerializer.svg)](https://travis-ci.org/gfx/Swift-JsonSerializer)
+# Swift-JsonSerializer
 
-A pure-Swift JSON parser and serializer
+A pure-Swift JSON parser and serializer. It has been modified to work as a Swift package (See https://swift.org/package-manager/ for more info).
 
 # SYNOPSIS
 
