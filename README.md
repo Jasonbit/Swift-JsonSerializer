@@ -5,17 +5,17 @@ A pure-Swift JSON parser and serializer. It has been modified to work as a Swift
 # SYNOPSIS
 
 ```
-import class JsonSerializer.JsonParser
-import enum JsonSerializer.Json
+import SwiftJsonSerializer
 
-// parse a JSON data
-let data: NSData
+// Get a json string into a object (dictionary)
+let string = "{\"first_name\": \"Jim\", \"last_name\": \"Smith\"}"
+let data = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
 
-switch JsonParser.parse(data) {
-case .Success(let json):
-  println(json["foo"]["bar"].stringValue)
-case .Error(let error):
-  println(error)
+do {
+  let object = try Json.deserialize(data)
+  print("object: \(object)")
+} catch {
+  print("Json deserialize error: \(error)")
 }
 
 // build a JSON structure
@@ -24,8 +24,8 @@ let profile: Json = [
   "started": 2014,
   "keywords": ["OOP", "functional programming", "static types", "iOS"],
 ]
-println(profile.description)      // packed JSON string
-println(profile.debugDescription) // pretty JSON string
+print(profile.description)      // packed JSON string
+print(profile.debugDescription) // pretty JSON string
 ```
 
 # DESCRIPTION
